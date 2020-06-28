@@ -1,0 +1,16 @@
+import axios from '@/utils/request'
+
+export function fetchData(ids,page,search,size,sortField,sortWay) {
+  return axios.post(`/health/findQuestions?page=${page}&search=${search}&size=${size}&sortField=${sortField}&sortWay=${sortWay}`,ids)
+}
+
+export function answering(data) {
+  return axios.post(`/health/answering`,data)
+}
+
+export function findAnswerByQid(data) {
+  return axios.get(`/health/findAnswerByQid?qid=${data}`)
+}
+export function findAnswerById(data) {
+  return axios.get(`/health/findAnswerById?qid=${data}`)
+}
